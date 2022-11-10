@@ -1,0 +1,376 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://assets/fonts/ORIOND.TTF" type="DynamicFontData" id=1]
+[ext_resource path="res://quiz_maker.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=9]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 49
+outline_size = 2
+outline_color = Color( 0.121569, 0.121569, 0.121569, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 18
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 20
+font_data = ExtResource( 1 )
+
+[node name="quiz_maker" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="bg" type="ColorRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 1024.0
+margin_bottom = 768.0
+color = Color( 0.168627, 0.176471, 0.231373, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="cancel" type="Button" parent="bg"]
+margin_left = 888.0
+margin_top = 9.0
+margin_right = 1014.0
+margin_bottom = 49.0
+rect_min_size = Vector2( 126, 0 )
+custom_fonts/font = SubResource( 9 )
+text = "X Cancel"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="bg"]
+margin_left = 98.0
+margin_top = 47.0
+margin_right = 927.0
+margin_bottom = 751.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="contents" type="VBoxContainer" parent="bg/MarginContainer"]
+margin_right = 829.0
+margin_bottom = 704.0
+
+[node name="label_create_quiz" type="Label" parent="bg/MarginContainer/contents"]
+margin_right = 829.0
+margin_bottom = 47.0
+custom_fonts/font = SubResource( 1 )
+text = "CREATE QUIZ"
+align = 1
+valign = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/contents"]
+margin_top = 51.0
+margin_right = 829.0
+margin_bottom = 78.0
+custom_constants/margin_top = 27
+
+[node name="HBoxContainer" type="HBoxContainer" parent="bg/MarginContainer/contents"]
+margin_top = 82.0
+margin_right = 829.0
+margin_bottom = 281.0
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/contents/HBoxContainer"]
+margin_right = 78.0
+margin_bottom = 199.0
+custom_constants/margin_left = 78
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="bg/MarginContainer/contents/HBoxContainer"]
+margin_left = 82.0
+margin_right = 233.0
+margin_bottom = 199.0
+custom_constants/separation = 81
+
+[node name="name_label" type="Label" parent="bg/MarginContainer/contents/HBoxContainer/VBoxContainer"]
+margin_right = 151.0
+margin_bottom = 25.0
+custom_fonts/font = SubResource( 2 )
+text = "Quiz Name : "
+valign = 1
+
+[node name="question_label" type="Label" parent="bg/MarginContainer/contents/HBoxContainer/VBoxContainer"]
+margin_top = 106.0
+margin_right = 151.0
+margin_bottom = 131.0
+custom_fonts/font = SubResource( 2 )
+text = "Question    : "
+valign = 1
+
+[node name="name_input" type="VBoxContainer" parent="bg/MarginContainer/contents/HBoxContainer"]
+margin_left = 237.0
+margin_right = 737.0
+margin_bottom = 199.0
+custom_constants/separation = 71
+
+[node name="quiz_name" type="LineEdit" parent="bg/MarginContainer/contents/HBoxContainer/name_input"]
+margin_right = 500.0
+margin_bottom = 28.0
+rect_min_size = Vector2( 500, 0 )
+custom_fonts/font = SubResource( 3 )
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question" type="TextEdit" parent="bg/MarginContainer/contents/HBoxContainer/name_input"]
+margin_top = 99.0
+margin_right = 500.0
+margin_bottom = 199.0
+rect_min_size = Vector2( 0, 100 )
+custom_constants/line_spacing = 1
+custom_fonts/font = SubResource( 4 )
+fold_gutter = true
+context_menu_enabled = false
+wrap_enabled = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="bg/MarginContainer/contents"]
+margin_top = 285.0
+margin_right = 829.0
+margin_bottom = 314.0
+custom_constants/margin_top = 29
+
+[node name="label_answer" type="Label" parent="bg/MarginContainer/contents"]
+margin_top = 318.0
+margin_right = 829.0
+margin_bottom = 343.0
+custom_fonts/font = SubResource( 2 )
+text = "ANSWERS"
+align = 1
+valign = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="bg/MarginContainer/contents"]
+margin_top = 347.0
+margin_right = 829.0
+margin_bottom = 356.0
+custom_constants/margin_top = 9
+
+[node name="answer_content" type="HBoxContainer" parent="bg/MarginContainer/contents"]
+margin_top = 360.0
+margin_right = 829.0
+margin_bottom = 531.0
+
+[node name="MarginContainer" type="MarginContainer" parent="bg/MarginContainer/contents/answer_content"]
+margin_right = 95.0
+margin_bottom = 171.0
+custom_constants/margin_right = 95
+
+[node name="label_choices" type="VBoxContainer" parent="bg/MarginContainer/contents/answer_content"]
+margin_left = 99.0
+margin_right = 139.0
+margin_bottom = 171.0
+custom_constants/separation = 23
+alignment = 1
+
+[node name="question_label6" type="Label" parent="bg/MarginContainer/contents/answer_content/label_choices"]
+margin_top = 1.0
+margin_right = 40.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 2 )
+text = "A : "
+valign = 1
+
+[node name="question_label3" type="Label" parent="bg/MarginContainer/contents/answer_content/label_choices"]
+margin_top = 49.0
+margin_right = 40.0
+margin_bottom = 74.0
+custom_fonts/font = SubResource( 2 )
+text = "B :"
+valign = 1
+
+[node name="question_label4" type="Label" parent="bg/MarginContainer/contents/answer_content/label_choices"]
+margin_top = 97.0
+margin_right = 40.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 2 )
+text = "C :"
+valign = 1
+
+[node name="question_label5" type="Label" parent="bg/MarginContainer/contents/answer_content/label_choices"]
+margin_top = 145.0
+margin_right = 40.0
+margin_bottom = 170.0
+custom_fonts/font = SubResource( 2 )
+text = "D : "
+valign = 1
+
+[node name="Answers" type="VBoxContainer" parent="bg/MarginContainer/contents/answer_content"]
+margin_left = 143.0
+margin_right = 743.0
+margin_bottom = 171.0
+custom_constants/separation = 17
+
+[node name="answer_a" type="LineEdit" parent="bg/MarginContainer/contents/answer_content/Answers"]
+margin_right = 600.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 600, 30 )
+custom_fonts/font = SubResource( 3 )
+max_length = 45
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="answer_b" type="LineEdit" parent="bg/MarginContainer/contents/answer_content/Answers"]
+margin_top = 47.0
+margin_right = 600.0
+margin_bottom = 77.0
+rect_min_size = Vector2( 600, 30 )
+custom_fonts/font = SubResource( 3 )
+max_length = 45
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="answer_c" type="LineEdit" parent="bg/MarginContainer/contents/answer_content/Answers"]
+margin_top = 94.0
+margin_right = 600.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 600, 30 )
+custom_fonts/font = SubResource( 3 )
+max_length = 45
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="answer_d" type="LineEdit" parent="bg/MarginContainer/contents/answer_content/Answers"]
+margin_top = 141.0
+margin_right = 600.0
+margin_bottom = 171.0
+rect_min_size = Vector2( 600, 30 )
+custom_fonts/font = SubResource( 3 )
+max_length = 45
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="label_q_number" type="Label" parent="bg"]
+margin_left = 342.0
+margin_top = 187.0
+margin_right = 539.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 7 )
+text = "Question # : "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="question_number" type="Label" parent="bg"]
+margin_left = 536.0
+margin_top = 187.0
+margin_right = 597.0
+margin_bottom = 219.0
+custom_fonts/font = SubResource( 5 )
+text = "1"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label_correct_answer" type="Label" parent="bg"]
+margin_left = 195.0
+margin_top = 594.0
+margin_right = 402.0
+margin_bottom = 619.0
+custom_fonts/font = SubResource( 2 )
+text = "Correct Answer : "
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="correct_answer" type="OptionButton" parent="bg/label_correct_answer"]
+margin_left = 211.0
+margin_right = 288.0
+margin_bottom = 26.0
+custom_fonts/font = SubResource( 6 )
+text = "A"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttons" type="HBoxContainer" parent="."]
+margin_left = 322.0
+margin_top = 673.0
+margin_right = 708.0
+margin_bottom = 713.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="previous" type="Button" parent="buttons"]
+margin_right = 126.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 126, 0 )
+custom_fonts/font = SubResource( 8 )
+text = "<< Previous"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="save" type="Button" parent="buttons"]
+margin_left = 130.0
+margin_right = 256.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 126, 0 )
+custom_fonts/font = SubResource( 8 )
+text = "SAVE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="next" type="Button" parent="buttons"]
+margin_left = 260.0
+margin_right = 386.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 126, 0 )
+custom_fonts/font = SubResource( 8 )
+disabled = true
+text = "Next >>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="bg/cancel" to="." method="_on_cancel_pressed"]
+[connection signal="pressed" from="buttons/previous" to="." method="_on_previous_pressed"]
+[connection signal="pressed" from="buttons/save" to="." method="_on_save_pressed"]
+[connection signal="pressed" from="buttons/next" to="." method="_on_next_pressed"]
